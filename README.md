@@ -1,4 +1,7 @@
-# yew-app
+# yew-kanban-app
+
+[Rust + Yew = WebAssembly でかんばんライクなタスク管理アプリを作ってみました。](https://nulab.com/ja/blog/nulab/rust-yew-webassembly-kanban-app/)
+を読んで同じもの作って見ようとしたら記事が崩れて読めなかったので、サンプルとか色々みて補完した。
 
 ## setup
 ```shell
@@ -11,7 +14,7 @@ $ cargo install wasm-pack
 $ wasm-pack build --target web --out-name wasm --out-dir ./static
 ```
 
-## hosting
+## local serve
 ```shell
 $ miniserve ./static --index index.html
 ```
