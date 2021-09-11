@@ -27,7 +27,30 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
-            { "Hello, world!" }
+            <>
+                <section class="section">
+                    <div class="container">
+                        <h1 class="title">
+                            { "Hello, world!"}
+                        </h1>
+                        <p class="subtitle">
+                            { "カンバンを作ってみる" }
+                        </p>
+                    </div>
+                </section>
+
+                <section id="board" class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column status-1">
+                                <div class="tags has-addons">
+                                    <span class="tag">{ "未処理" }</span> <span class="tag is-dark">{ 0 } </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
         }
     }
 }
