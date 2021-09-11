@@ -2,31 +2,20 @@ use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
 struct Model {
-    link: ComponentLink<Self>,
-    value: i64,
 }
 
 enum Msg {
-    Increment,
-    Decrement,
 }
 
 impl Component for Model {
     type Message = Msg;
     type Properties = ();
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            value: 0,
-        }
+    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
+        Model {}
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        match msg {
-            Msg::Increment => self.value += 1,
-            Msg::Decrement => self.value -= 1,
-        }
-        true
+    fn update(&mut self, _: Self::Message) -> ShouldRender {
+        false
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
@@ -38,12 +27,7 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
-            <div>
-                <h1>{ "counter" }</h1>
-                <button onclick=self.link.callback(|_| Msg::Increment)>{ "+1" }</button>
-                <button onclick=self.link.callback(|_| Msg::Decrement)>{ "-1" }</button>
-                <p>{ self.value }</p>
-            </div>
+            { "Hello, world!" }
         }
     }
 }
