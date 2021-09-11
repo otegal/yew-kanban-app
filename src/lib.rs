@@ -7,7 +7,8 @@ struct Model {
 }
 
 enum Msg {
-    AddOne,
+    Increment,
+    Decrement,
 }
 
 impl Component for Model {
@@ -22,7 +23,8 @@ impl Component for Model {
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::AddOne => self.value += 1
+            Msg::Increment => self.value += 1,
+            Msg::Decrement => self.value -= 1,
         }
         true
     }
@@ -37,7 +39,9 @@ impl Component for Model {
     fn view(&self) -> Html {
         html! {
             <div>
-                <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
+                <h1>{ "counter" }</h1>
+                <button onclick=self.link.callback(|_| Msg::Increment)>{ "+1" }</button>
+                <button onclick=self.link.callback(|_| Msg::Decrement)>{ "-1" }</button>
                 <p>{ self.value }</p>
             </div>
         }
@@ -47,13 +51,4 @@ impl Component for Model {
 #[wasm_bindgen(start)]
 pub fn run_app() {
     App::<Model>::new().mount_to_body();
-}
-
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
 }
