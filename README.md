@@ -1,6 +1,6 @@
 # yew-kanban-app
 
-[Rust + Yew = WebAssembly でかんばんライクなタスク管理アプリを作ってみました。](https://nulab.com/ja/blog/nulab/rust-yew-webassembly-kanban-app/)
+[Rust + Yew = WebAssembly でかんばんライクなタスク管理アプリを作ってみました。](https://nulab.com/ja/blog/nulab/rust-yew-webassembly-kanban-app/)　　
 を読んで同じもの作って見ようとしたら記事が崩れて読めなかったので、サンプルとか色々みて補完した。
 
 ## setup
